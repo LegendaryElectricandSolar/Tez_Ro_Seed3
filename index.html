@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tez Ro Seed - High Yield Agricultural Seeds & Crop Management</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #4caf50;
+            --accent-color: #fbc02d;
+            --dark-color: #1b5e20;
+            --light-color: #f4f8f4;
+            --text-color: #333333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-color);
+            background-color: #fafafa;
+            line-height: 1.6;
+        }
+
+        /* Top Bar & Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .site-logo {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn {
+            padding: 10px 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s, background-color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: var(--white);
+        }
+
+        .btn-call {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Hero Section - 80% Visible Image */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 70px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            margin-bottom: 30px;
+        }
+
+        /* About Us */
+        .about-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .gmb-link {
+            color: var(--primary-color);
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        .gmb-link:hover {
+            color: var(--dark-color);
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .service-info {
+            padding: 20px;
+        }
+
+        .service-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .blog-card h3 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+            font-size: 1.2rem;
+        }
+
+        .blog-card p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .read-more-btn {
+            align-self: flex-start;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .read-more-btn:hover {
+            background-color: var(--dark-color);
+        }
+
+        /* Testimonials */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .stars {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .faq-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding-top: 60px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5% 40px 5%;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .footer-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-col p {
+            margin-bottom: 10px;
+            color: #ddd;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-btns {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 180px;
+            border: 0;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .copyright {
+            background-color: #123e15;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo-container">
+                <img src="https://www.wireanium.com/logos/profile/limage-63343-447-photo.webp" alt="Tez Ro Seed Logo" class="site-logo">
+                <span class="brand-name">Tez Ro Seed</span>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Empowering Farmers with High-Yield Seed Production</h1>
+            <p>Your trusted partner for certified seed varieties, crop disease management, and optimized agricultural cultivation in Pakistan.</p>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about">
+        <h2 class="section-title">About Us</h2>
+        
+        <div class="about-container">
+            <div class="about-text">
+                <h3>Leading Agricultural Seed Production in Pakistan</h3>
+                <p>At <a href="https://maps.app.goo.gl/UNkZ3HeAnQ8dBtB5A" target="_blank" class="gmb-link">Tez Ro Seed</a>, located in Dhareja Nagar, we specialize in high-yielding seed varieties engineered for maximum crop survival, disease resistance, and maximum harvest output.</p>
+                <br>
+                <p>From wheat and rice to commercial seed production and crop disease management, our expert agricultural services cater to modern farmers aiming for sustainable growth and maximum profitability.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=800&q=80" alt="Tez Ro Seed Field">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <h2 class="section-title">Our Specialized Services</h2>
+
+        <div class="services-grid">
+            <!-- 1. Crop Disease Management -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=600&q=80" alt="Crop Disease Management">
+                <div class="service-info">
+                    <h3>Crop Disease Management</h3>
+                    <p>Advanced diagnostic and <a href="https://maps.app.goo.gl/UNkZ3HeAnQ8dBtB5A" target="_blank" class="gmb-link">field management solutions</a> to protect crops from fungal, bacterial, and viral infections.</p>
+                </div>
+            </div>
+
+            <!-- 2. Rice Cultivation -->
+            <div class="service-card">
+                <img src="https://www.chinagrainmachine.com/Content/uploads/2020560411/202004291617281cca9ac0c0ba4e308d9de607ad2eee91.jpg" alt="Rice Cultivation">
+                <div class="service-info">
+                    <h3>Rice Cultivation</h3>
+                    <p>Expert guidance and high-performing Basmati and hybrid rice seed varieties for optimal field yields.</p>
+                </div>
+            </div>
+
+            <!-- 3. Agricultural Seed Production -->
+            <div class="service-card">
+                <img src="https://miro.medium.com/v2/resize:fit:1200/1*0eLEUuxIWY_wm0_sr8V3PA.png" alt="Agricultural Seed Production">
+                <div class="service-info">
+                    <h3>Agricultural Seed Production</h3>
+                    <p>Scientifically developed seeds created under controlled quality processes for maximum germination efficiency.</p>
+                </div>
+            </div>
+
+            <!-- 4. Wheat Cultivation -->
+            <div class="service-card">
+                <img src="https://i.ytimg.com/vi/1k7aeRtL8mY/maxresdefault.jpg" alt="Wheat Cultivation">
+                <div class="service-info">
+                    <h3>Wheat Cultivation</h3>
+                    <p><a href="https://maps.app.goo.gl/UNkZ3HeAnQ8dBtB5A" target="_blank" class="gmb-link">High-yield wheat seed</a> varieties tested for climate resilience and maximum grain production per acre.</p>
+                </div>
+            </div>
+
+            <!-- 5. High Yield Seed Production -->
+            <div class="service-card">
+                <img src="https://res.cloudinary.com/jerrick/image/upload/c_scale,f_jpg,q_auto/697895e22b8798001c47543f.jpg" alt="High Yield Seed Production">
+                <div class="service-info">
+                    <h3>High Yield Seed Production</h3>
+                    <p>Genetically strong seeds engineered for higher harvest weights and resistance to climate variations.</p>
+                </div>
+            </div>
+
+            <!-- 6. Crop Pest Management -->
+            <div class="service-card">
+                <img src="https://blog.plantwise.org/wp-content/uploads/sites/7/2025/08/134_farmer-is-applying-insecticides-for-the-control-of-insect-pests-1024x576.jpg" alt="Crop Pest Management">
+                <div class="service-info">
+                    <h3>Crop Pest Management</h3>
+                    <p>Integrated pest management protocols designed to safeguard crops safely and boost farm profitability.</p>
+                </div>
+            </div>
+
+            <!-- 7. Commercial Seed Production -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=600&q=80" alt="Commercial Seed Production">
+                <div class="service-info">
+                    <h3>Commercial Seed Production</h3>
+                    <p>Large-scale certified seed processing and supply chain distribution for agricultural operations.</p>
+                </div>
+            </div>
+
+            <!-- 8. Cotton Cultivation -->
+            <div class="service-card">
+                <img src="https://img.gazeta.ru/files3/237/23272237/shutterstock_2377137723-pic_32ratio_900x600-900x600-89655.jpg" alt="Cotton Cultivation">
+                <div class="service-info">
+                    <h3>Cotton Cultivation</h3>
+                    <p>Premium <a href="https://maps.app.goo.gl/UNkZ3HeAnQ8dBtB5A" target="_blank" class="gmb-link">cotton seed</a> varieties providing superior boll count and resistance against whitefly and bollworms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section id="blog">
+        <h2 class="section-title">Our Blogs</h2>
+
+        <div class="blog-grid">
+            <!-- Article 1 -->
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1501430654243-c934cec2e1c0?auto=format&fit=crop&w=600&q=80" alt="Wheat Cultivation Guidance">
+                <div class="blog-content">
+                    <h3>Wheat Cultivation Guidance for Productive Farming</h3>
+                    <p>Learn comprehensive field strategies, sowing techniques, and seed care methods for maximizing your seasonal wheat harvest.</p>
+                    <a href="https://sohomoy.com/blogs/72173/Wheat-Cultivation-Guidance-for-Productive-Farming" target="_blank" class="read-more-btn">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="blog-card">
+                <img src="https://geniwit.com/public/sesblog_album/74/77/1d/055fc1b2c9c2f0da9119354c05e13018.jpg" alt="Seed Production Services">
+                <div class="blog-content">
+                    <h3>Seed Production Services for Reliable Agricultural Supply</h3>
+                    <p>Discover how certified seed development and scientific processing support nationwide crop consistency and higher farm yields.</p>
+                    <a href="https://geniwit.com/blog/seed-production-services-for-reliable-agricultural-supply" target="_blank" class="read-more-btn">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="blog-card">
+                <img src="https://lukoon.com/content/uploads/photos/2026/10/lukoon_7c6ddf0cf71aed89e9f548f909228ecf.jpg" alt="Quality Rice Seeds">
+                <div class="blog-content">
+                    <h3>Quality Rice Seeds for Healthy Crops and Better Harvests</h3>
+                    <p>Explore essential practices for choosing premium rice seed varieties to prevent common paddy diseases and optimize market yield.</p>
+                    <a href="https://lukoon.com/blogs/33840/Quality-Rice-Seeds-for-Healthy-Crops-and-Better-Harvests" target="_blank" class="read-more-btn">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS -->
+    <section id="reviews">
+        <h2 class="section-title">Customer Reviews</h2>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Tez Ro Seed provides outstanding wheat seed quality. My germination rate was over 95% this season!"</p>
+                <br><strong>- Muhammad Tariq</strong>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Their advice on cotton pest management saved our crop from bollworm infestation. Highly reliable team."</p>
+                <br><strong>- Chaudhry Aslam</strong>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Great customer service and reasonable prices for high-yield rice seeds in the region."</p>
+                <br><strong>- Ali Haider Gujjar</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQS SECTION -->
+    <section id="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>Q: What are your operating hours?</h3>
+            <p>We are open Monday through Sunday, from 10:00 AM to 08:00 PM.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Q: Where is Tez Ro Seed located?</h3>
+            <p>Our office is located at Bagho Bahar Rd, Chak 64-P Dhareja Nagar, 64100, Pakistan.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Q: Do you offer bulk orders for commercial farming?</h3>
+            <p>Yes, we specialize in commercial seed production and bulk supply for wheat, rice, and cotton crops across the region.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-container">
+            <!-- Col 1: Quick Links -->
+            <div class="footer-col">
+                <div class="footer-logo-container">
+                    <img src="https://www.wireanium.com/logos/profile/limage-63343-447-photo.webp" alt="Tez Ro Seed Logo" class="site-logo">
+                    <span class="brand-name" style="color: var(--white);">Tez Ro Seed</span>
+                </div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 2: Contact Info -->
+            <div class="footer-col">
+                <h4>Contact Information</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Bagho Bahar Rd, Chak 64-P Dhareja Nagar, 64100, Pakistan</p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:03033214681">0303-3214681</a></p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@tezroseed.com">info@tezroseed.com</a></p>
+                <p><i class="fa-solid fa-clock"></i> Mon - Sun: 10:00 AM - 08:00 PM</p>
+                <div class="footer-btns">
+                    <a href="https://wa.me/923033214681" target="_blank" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="tel:03033214681" class="btn btn-call">
+                        <i class="fa-solid fa-phone"></i> Call Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Col 3: Google Map -->
+            <div class="footer-col">
+                <h4>Find Us On Map</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2674.2910695627465!2d70.4726055!3d28.362955799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3939e11322fb4ec9%3A0x370bb4a78656e06a!2sTez%20Ro%20Seed!5e1!3m2!1sen!2s!4v1793331254458!5m2!1sen!2s" class="map-frame" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            © 2026 The Ranking Geeks. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
